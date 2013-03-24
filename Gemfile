@@ -9,6 +9,8 @@ gem 'rails-api'
 
 gem 'sqlite3'
 
+gem 'tumblr_client'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
