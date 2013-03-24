@@ -16,9 +16,9 @@ class CreateInitialModels < ActiveRecord::Migration
     end
 
     create_table :legislations do |t|
-      t.integer :bill_id
+      t.string  :bill_id
       t.string  :source
-      t.integer :identifier_at_source
+      t.string  :identifier_at_source
       t.string  :session
       t.string  :state
       t.string  :chamber

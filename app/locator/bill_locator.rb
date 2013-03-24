@@ -8,18 +8,14 @@ class Locator::BillLocator
   end
 
 
-  def locate
+  def locate(since_time = Time.zone.today - 1.day)
     sources.each do |data_source|
       @tags.each do |tag|
-        @bills << data_source.bills_updated_since(Time.zone.now - 1.month, tag.name)
+        @bills << data_source.bills_updated_since(since_time, tag.name)
       end
     end
-
-    @bills.flatten.each do |bill|
-      create_initial_events if bill.new_record? and bill.save
-    end
+    @bills = @bills.flatten
   end
-
 
 private
 

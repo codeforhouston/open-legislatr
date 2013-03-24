@@ -21,7 +21,7 @@ private
 
 
   def build_event_from_differences(bill, bill_query_results)
-    changes = AttributeComparison.new(bill, bill_query_results).changes
+    changes = OpenStates::AttributeComparison.new(bill, bill_query_results).changes
     changes.any? ? build_event_with_changes(bill, changes) : nil
   end
 
@@ -32,18 +32,6 @@ private
     changes.each do |change|
       change.event = event
       change.save
-    end
-  end
-
-
-
-
-  class Monitor::AttributeComparison < Struct.new(:legislation, :current_bill)
-
-    MONITORED_ATTRIBUTES = ['', '', '', '']
-
-    def changes
-
     end
   end
 

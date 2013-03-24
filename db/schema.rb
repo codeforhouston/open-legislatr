@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(:version => 20130324033900) do
   end
 
   create_table "legislations", :force => true do |t|
-    t.integer  "bill_id"
+    t.string   "bill_id"
     t.string   "source"
-    t.integer  "identifier_at_source"
+    t.string   "identifier_at_source"
     t.string   "session"
     t.string   "state"
     t.string   "chamber"
