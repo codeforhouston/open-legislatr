@@ -15,23 +15,30 @@ ActiveRecord::Schema.define(:version => 20130324033900) do
 
   create_table "changes", :force => true do |t|
     t.integer  "event_id"
-    t.string   "attribute"
+    t.string   "key"
     t.string   "from"
     t.string   "to"
+    t.string   "human"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "events", :force => true do |t|
     t.integer  "legislation_id"
+    t.boolean  "published"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
   create_table "legislations", :force => true do |t|
-    t.integer  "bill_identifier"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "bill_id"
+    t.string   "source"
+    t.integer  "identifier_at_source"
+    t.string   "session"
+    t.string   "state"
+    t.string   "chamber"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "tag_associations", :force => true do |t|

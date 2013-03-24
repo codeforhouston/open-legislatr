@@ -2,19 +2,26 @@ class CreateInitialModels < ActiveRecord::Migration
   def up
     create_table :events do |t|
       t.integer :legislation_id
+      t.boolean :published
       t.timestamps
     end
 
     create_table :changes do |t|
       t.integer :event_id
-      t.string :attribute
+      t.string :key
       t.string :from
       t.string :to
+      t.string :human
       t.timestamps
     end
 
     create_table :legislations do |t|
-      t.integer :bill_identifier
+      t.integer :bill_id
+      t.string  :source
+      t.integer :identifier_at_source
+      t.string  :session
+      t.string  :state
+      t.string  :chamber
       t.timestamps
     end
 

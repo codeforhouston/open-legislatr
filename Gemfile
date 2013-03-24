@@ -11,6 +11,7 @@ gem 'sqlite3'
 
 gem 'tumblr_client'
 
+gem 'govkit'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
