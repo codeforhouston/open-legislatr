@@ -1,0 +1,15 @@
+.DS_Store
+log/*.log
+tmp/**/*
+config/database.yml
+db/*.sqlite3
+# db/schema.rb
+*.swp
+*.tmproj
+tmtags
+.project
+.bundle
+*.sublime-project
+*.sublime-workspace
+.sass-cache/
+public/assets/
